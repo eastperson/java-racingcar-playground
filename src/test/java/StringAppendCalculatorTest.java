@@ -34,4 +34,14 @@ class StringAppendCalculatorTest {
         Integer result = stringAppendCalculator.sum(str);
         assertThat(result).isEqualTo(expected);
     }
+
+
+    @ParameterizedTest
+    @CsvSource(value = {"1,2,3,4=10", "1,2,3:5=11"}, delimiter = '=')
+    @DisplayName("세미콜론을 구분자로 숫자를 합한다")
+    void semicolon_sum(String str, Integer expected) {
+        StringAppendCalculator stringAppendCalculator = new StringAppendCalculator();
+        Integer result = stringAppendCalculator.sum(str);
+        assertThat(result).isEqualTo(expected);
+    }
 }

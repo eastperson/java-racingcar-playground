@@ -1,7 +1,7 @@
 public class StringAppendCalculator {
     public Integer sum(String str) {
-        if (str.contains(",") || str.contains(";")){
-            str.replace(";", ",");
+        if (str.contains(",") || str.contains(":")){
+            str = str.replace(":", ",");
             String[] strArr = str.split(",");
             Integer sum = 0;
             for (String integerStr : strArr) {
