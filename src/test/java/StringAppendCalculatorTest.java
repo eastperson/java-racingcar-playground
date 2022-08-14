@@ -44,4 +44,15 @@ class StringAppendCalculatorTest {
         Integer result = stringAppendCalculator.sum(str);
         assertThat(result).isEqualTo(expected);
     }
+
+
+    @Test
+    @DisplayName("||로 만든 커스텀 구분자를 사용한다")
+    void custom_delimiter_sum() {
+        String str = "||G\n1G2G3G";
+        Integer expected = 6;
+        StringAppendCalculator stringAppendCalculator = new StringAppendCalculator();
+        Integer result = stringAppendCalculator.sum(str);
+        assertThat(result).isEqualTo(expected);
+    }
 }
