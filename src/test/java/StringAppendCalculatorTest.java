@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -22,14 +24,5 @@ class StringAppendCalculatorTest {
         StringAppendCalculator stringAppendCalculator = new StringAppendCalculator();
         Integer result = stringAppendCalculator.sum(str);
         assertThat(result).isEqualTo(0);
-    }
-
-    @Test
-    @DisplayName("쉼표를 구분자로 숫자를 합한다")
-    void comma_sum() {
-        String str = "1,2";
-        StringAppendCalculator stringAppendCalculator = new StringAppendCalculator();
-        Integer result = stringAppendCalculator.sum(str);
-        assertThat(result).isEqualTo(3);
     }
 }
