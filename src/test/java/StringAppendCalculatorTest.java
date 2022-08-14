@@ -25,4 +25,13 @@ class StringAppendCalculatorTest {
         Integer result = stringAppendCalculator.sum(str);
         assertThat(result).isEqualTo(0);
     }
+
+    @ParameterizedTest
+    @CsvSource(value = {"1,2=3", "1,2,3=6"}, delimiter = '=')
+    @DisplayName("쉼표를 구분자로 숫자를 합한다")
+    void comma_sum(String str, Integer expected) {
+        StringAppendCalculator stringAppendCalculator = new StringAppendCalculator();
+        Integer result = stringAppendCalculator.sum(str);
+        assertThat(result).isEqualTo(expected);
+    }
 }
