@@ -2,8 +2,8 @@ package domain;
 
 import java.util.Objects;
 
-public class Car implements Comparable<Car> {
-    private String name;
+public final class Car implements Comparable<Car> {
+    private final String name;
     private int position;
 
     public Car(String name) {

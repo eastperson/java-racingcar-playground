@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 public class Race {
 
     private int round;
-    private int finalRound;
-    private List<Car> participants;
+    private final int finalRound;
+    private final List<Car> participants;
     private boolean end;
     private List<Car> winners = new ArrayList<>();
 
