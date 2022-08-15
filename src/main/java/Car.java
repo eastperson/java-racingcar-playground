@@ -13,4 +13,8 @@ public class Car {
     public Integer position() {
         return this.position;
     }
+
+    public void moveAhead() {
+        this.position++;
+    }
 }
