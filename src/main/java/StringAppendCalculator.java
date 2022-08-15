@@ -36,6 +36,9 @@ public class StringAppendCalculator {
         for (String integerStr : strArr) {
             try {
                 int integer = Integer.parseInt(integerStr);
+                if (integer < 0) {
+                    throw new RuntimeException("음수는 넣을 수 없습니다.");
+                }
                 sum += integer;
             } catch (NumberFormatException e) {
                 throw new RuntimeException("파싱할 수 없는 숫자 입니다.");
