@@ -26,6 +26,15 @@ class StringAppendCalculatorTest {
         assertThat(result).isEqualTo(0);
     }
 
+    @Test
+    @DisplayName("null 인 경우도 0을 반환한다")
+    void null_sum() {
+        String str = null;
+        StringAppendCalculator stringAppendCalculator = new StringAppendCalculator();
+        Integer result = stringAppendCalculator.sum(str);
+        assertThat(result).isEqualTo(0);
+    }
+
     @ParameterizedTest
     @CsvSource(value = {"1,2=3", "1,2,3=6"}, delimiter = '=')
     @DisplayName("쉼표를 구분자로 숫자를 합한다")

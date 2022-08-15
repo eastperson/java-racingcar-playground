@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StringAppendCalculator {
@@ -16,7 +15,7 @@ public class StringAppendCalculator {
     private String DELIMITER_PARSE_END_WITH = "\n";
 
     public Integer sum(String str) {
-        if (isEmpty(str)) {
+        if (isNullOrEmpty(str)) {
             return 0;
         }
 
@@ -58,8 +57,8 @@ public class StringAppendCalculator {
         return str;
     }
 
-    private boolean isEmpty(String str) {
-        return str.length() == 0;
+    private boolean isNullOrEmpty(String str) {
+        return str == null || str.length() == 0;
     }
 
     private boolean hasDelimiter(String str) {
