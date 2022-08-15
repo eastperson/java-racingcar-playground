@@ -1,3 +1,7 @@
+import domain.Board;
+import domain.Car;
+import domain.Race;
+import domain.StringToCars;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

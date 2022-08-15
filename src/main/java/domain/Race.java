@@ -1,4 +1,7 @@
+package domain;
+
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -40,9 +43,12 @@ public class Race {
             }
         });
         if (round >= finalRound) {
-            Optional<Car> first = this.participants.stream().sorted().findFirst();
+            Optional<Car> first = this.participants.stream()
+                    .max(Comparator.naturalOrder());
             this.end = true;
-            this.winners = this.participants.stream().filter(car -> car.position().equals(first.get().position())).collect(Collectors.toList());
+            this.winners = this.participants.stream()
+                    .filter(car -> car.position().equals(first.get().position()))
+                    .collect(Collectors.toList());
         }
     }
 
@@ -53,5 +59,16 @@ public class Race {
 
     public boolean end() {
         return this.end;
+    }
+
+    public boolean processing() {
+        return !this.end;
+    }
+
+    public List<Car> winners() {
+        if (processing()) {
+            throw new RuntimeException("아직 경기가 진행중입니다.");
+        }
+        return this.winners;
     }
 }
